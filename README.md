@@ -1,10 +1,41 @@
 # Spring
+
+* Spring is the most popular application development framework for enterprise Java. Millions 
+of developers around the world use Spring Framework to create high performing, easily 
+testable, and reusable code.
+* Spring framework is an open source Java platform. 
+* It was initially written by Rod Johnson and was first released under the Apache 2.0 license
+in June 2003.
+* Spring is lightweight when it comes to size and transparency. The basic version of Spring 
+framework is around 2MB.
 <br/>
 
+# Benefits of Using the Spring Framework
+
+Following is the list of few of the great benefits of using Spring Framework:
+
+* Spring does not reinvent the wheel, instead it truly makes use of some of the 
+existing technologies like several ORM frameworks, logging frameworks, JEE, 
+Quartz and JDK timers, and other view technologies.
+
+* Testing an application written with Spring is simple because environment
+dependent code is moved into this framework. Furthermore, by using JavaBean-style POJOs
+(Plain Old Java Object), it becomes easier to use dependency injection for injecting test data.
+
+* Spring's web framework is a well-designed web MVC framework, which provides a 
+great alternative to web frameworks such as Struts or other over-engineered or 
+less popular web frameworks.
+
+* Spring provides a convenient API to translate technology-specific exceptions 
+(thrown by JDBC, Hibernate for example) into consistent, unchecked exceptions.
+<br/>
 
 ## Table of Contents
 
 * [Introduction](#-1-introduction)
+
+# Spring – Hello World Example
+
 
 ## # 1. INTRODUCTION
 
