@@ -51,7 +51,7 @@ public class Test {
 
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#-1-introduction">↥ back to top</a></b>
 </div>
 
 
@@ -79,5 +79,5 @@ As an alternative:
 
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#-1-introductions">↥ back to top</a></b>
 </div>
