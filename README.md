@@ -58,9 +58,8 @@ public class Test {
 
 
 <div align="right">
-    <b><a href="## Table of Contents">↥ back to top</a></b>
+    <b><a href="#related-topics">↥ back to top</a></b>
 </div>
-
 # Saga example: trip booking
 
 The Saga pattern describes how to solve distributed (business) transactions without two-phase-commit as this does not scale in distributed systems. The basic idea is to break the overall transaction into multiple steps or activities. Only the steps internally can be performed in atomic transactions but the overall consistency is taken care of by the Saga. The Saga has the responsibility to either get the overall business transaction completed or to leave the system in a known termination state. So in case of errors a business rollback procedure is applied which occurs by calling compensation steps or activities in reverse order. A more detailed look on Sagas is available in [Saga: How to implement complex business transactions without two phase commit](
