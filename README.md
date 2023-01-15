@@ -121,7 +121,7 @@ public class MainClass {
 ```java
 Good Morning
 ```
-## Spring IOC (Inversion of Control)
+# Spring IOC (Inversion of Control)
 
 ## 1. Spring BeanFactory Container
 
@@ -213,9 +213,86 @@ Name: Dinga
 Email: Dinga@gmail.com
 ```
 
+## 2. Spring ApplicationContext Container
 
-As an alternative:
-* Run the [TripBookingSaga.java](src/main/java/io/flowing/trip/saga/camunda/simple/TripBookingSaga.java) class via your favorite IDE - it also will run instances of the Saga without requiring any infrastructure
+This container adds more enterprise-specific functionality such as the ability to 
+resolve textual messages from a properties file and the ability to publish 
+application events to interested event listeners. This container is defined by 
+the org.springframework.context.ApplicationContext interface.
+
+```java
+
+
+public class Employee {
+
+	private int id;
+	private String name;
+	private double salary;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+}
+```
+
+```java
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSaveEmployee {
+	public static void main(String[] args) {
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+		Employee e = (Employee) context.getBean("myEmployee");
+
+		System.out.println("Id: " + e.getId());
+		System.out.println("Name: " + e.getName());
+		System.out.println("Salary: " + e.getSalary());
+	}
+}
+```
+## XML FILE
+
+```java
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="myEmployee" class="com.Employee">
+		<property name="id" value="1"></property>
+		<property name="name" value="Dinga"></property>
+		<property name="salary" value="50000.00"></property>
+	</bean>
+	
+</beans>
+```
+- [`SpringApplicationContextContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringApplicationContextContainer)
+
+## Output
+
+```java
+Id: 1
+Name: Dinga
+Salary: 50000.0
+```
 
 ## Q. What is difference between Error and Exception?
 |ERROR                                    |EXCEPTION                               |
