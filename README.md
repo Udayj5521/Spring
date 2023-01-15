@@ -46,6 +46,64 @@ created context. This method uses bean ID to return a generic object, which fina
 can be casted to the actual object. Once you have an object, you can use this 
 object to call any class method.
 
+```java
+public class HelloWorld {
+
+	private String message;
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getMessage() {
+		return message;
+
+	}
+}
+```
+
+```java
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainClass {
+	public static void main(String[] args) {
+
+//		HelloWorld h = new HelloWorld();
+//		h.setMessage("Good Morning");
+//
+//		System.out.println(h.getMessage());
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+		HelloWorld h = (HelloWorld) context.getBean("myHello");
+		System.out.println(h.getMessage());
+	}
+
+}
+```
+XML FILE
+```java
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<bean id="myHello" class="com.HelloWorld">
+	<property name="message" value="Good Morning"></property>
+	</bean>
+    
+
+</beans>
+```
+
+
 ## # 1. INTRODUCTION
 
 <br/>
@@ -57,9 +115,9 @@ Add the following dependency to your project:
 
 ```xml
 <dependency>
-    <groupId>org.zalando</groupId>
-    <artifactId>logbook-core</artifactId>
-    <version>${logbook.version}</version>
+    <groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>5.3.18</version>
 </dependency>
 ```
 
@@ -73,30 +131,6 @@ and related interfaces, such as BeanFactoryAware, InitializingBean,
 DisposableBean, are still present in Spring for the purpose of backward 
 compatibility with a large number of third-party frameworks that integrate with 
 Spring.
-
-
-```java
-Logbook logbook = Logbook.create();
-```
-or create a customized version using the `LogbookBuilder`:
-
-```java
-Logbook logbook = Logbook.builder()
-    .condition(new CustomCondition())
-    .queryFilter(new CustomQueryFilter())
-    .pathFilter(new CustomPathFilter())
-    .headerFilter(new CustomHeaderFilter())
-    .bodyFilter(new CustomBodyFilter())
-    .requestFilter(new CustomRequestFilter())
-    .responseFilter(new CustomResponseFilter())
-    .sink(new DefaultSink(
-            new CustomHttpLogFormatter(),
-            new CustomHttpLogWriter()
-    ))
-    .build();
-```
-
-
 
 Logbook comes with some built-in strategies:
 
