@@ -32,7 +32,7 @@ less popular web frameworks.
 
 * [Introduction](#-1-introduction)
 * [Installation](#-2-installation)
-
+* [Spring IOC (Inversion of Control)](#-3-Spring IOC (Inversion of Control))
 
 # Spring – Hello World Example
 
@@ -63,7 +63,7 @@ Add the following dependency to your project:
 </dependency>
 ```
 
-## # 3. Spring IOC (Inversion of Control)
+## Spring IOC (Inversion of Control)
 
 ## 1. Spring BeanFactory Container
 
