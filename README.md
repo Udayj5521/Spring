@@ -144,7 +144,7 @@ Logbook comes with some built-in strategies:
 * Interface methods by default;
 
 <div align="right">
-    <b><a href="(#-2-installation)">↥ back to top</a></b>
+    <b><a href="(#-3-SpringBeanFactoryContainer)">↥ back to top</a></b>
 </div>
 
 
