@@ -1,5 +1,4 @@
 # Spring
-
 * Spring is the most popular application development framework for enterprise Java. Millions 
 of developers around the world use Spring Framework to create high performing, easily 
 testable, and reusable code.
@@ -11,7 +10,6 @@ framework is around 2MB.
 <br/>
 
 # Benefits of Using the Spring Framework
-
 Following is the list of few of the great benefits of using Spring Framework:
 
 * Spring does not reinvent the wheel, instead it truly makes use of some of the 
@@ -33,7 +31,7 @@ less popular web frameworks.
 ## Table of Contents
 
 * [Introduction](#-1-introduction)
-
+* [Installation](#-1-installation)
 
 
 # Spring – Hello World Example
