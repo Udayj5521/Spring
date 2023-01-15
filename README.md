@@ -302,14 +302,7 @@ Salary: 50000.0
 |Bean Factory                                    |ApplicationContext                       |
 |-----------------------------------------|----------------------------------------|
 |1. Does not support the Annotation based dependency Injection| 1.Support Annotation based dependency Injection. -@Autowired, @PreDestroy|
-|An error is irrecoverable.	            |An exception is recoverable.|
-|There is no means to handle an error by the program code.|	Exceptions are handled using three keywords "try", "catch", and "throw".|
-|As the error is detected the program will terminated abnormally.|As an exception is detected, it is thrown and caught by the "throw" and "catch" keywords correspondingly.|
-|Errors are classified as unchecked type.|Exceptions are classified as checked or unchecked type.|
-|In Java, errors are defined "java.lang.Error" package.|In Java, an exceptions are defined in"java.lang.Exception".|
-|OutOfMemory, StackOverFlow.|Checked Exceptions: NoSuchMethod, ClassNotFound.Unchecked Exceptions: NullPointer, IndexOutOfBounds.|
+|2.Support Lazy Loading 	        |2. Support Aggressive loading|
+|3.It doesn't allow configure to multiple configuration files.|3.It allow to configure multiple configuration files.|
+|BeanFactory factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));|ApplicationContext contect = new  ClassPathXmlApplicationContext("beans.xml");|
 
-
-<div align="right">
-    <b><a href="#-2-installation>↥ back to top</a></b>
-</div>
