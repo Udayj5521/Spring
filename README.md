@@ -114,7 +114,7 @@ public class MainClass {
 
 </beans>
 ```
-
+- [`BodyOnlyIfStatusAtLeastStrategy`](https://github.com/Udayj5521/Spring/tree/main/SpringOnline)
 ## Spring IOC (Inversion of Control)
 
 ## 1. Spring BeanFactory Container
