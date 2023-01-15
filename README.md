@@ -92,6 +92,14 @@ Logbook logbook = Logbook.builder()
 ```
 
 
+
+Logbook comes with some built-in strategies:
+
+- [`BodyOnlyIfStatusAtLeastStrategy`](logbook-core/src/main/java/org/zalando/logbook/BodyOnlyIfStatusAtLeastStrategy.java)
+- [`StatusAtLeastStrategy`](logbook-core/src/main/java/org/zalando/logbook/StatusAtLeastStrategy.java)
+- [`WithoutBodyStrategy`](logbook-core/src/main/java/org/zalando/logbook/WithoutBodyStrategy.java)
+
+
 ## Q. What are the important features of Java 8 release?
 
 * Interface methods by default;
