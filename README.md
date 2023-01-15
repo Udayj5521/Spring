@@ -121,6 +121,8 @@ public class MainClass {
 ```java
 Good Morning
 ```
+<br /> 
+
 # Spring IOC (Inversion of Control)
 
 ## 1. Spring BeanFactory Container
@@ -212,6 +214,7 @@ Id: 1
 Name: Dinga
 Email: Dinga@gmail.com
 ```
+<br /> 
 
 ## 2. Spring ApplicationContext Container
 
@@ -293,11 +296,12 @@ Id: 1
 Name: Dinga
 Salary: 50000.0
 ```
+<br /> 
 
-## Q. What is difference between Error and Exception?
-|ERROR                                    |EXCEPTION                               |
+## Q. What is Difference Between BeanFactory and Application Context?
+|Bean Factory                                    |ApplicationContext                       |
 |-----------------------------------------|----------------------------------------|
-|An error is caused due to lack of system resources.|An exception is caused because of the code.|
+|1. Does not support the Annotation based dependency Injection| 1.Support Annotation based dependency Injection. -@Autowired, @PreDestroy|
 |An error is irrecoverable.	            |An exception is recoverable.|
 |There is no means to handle an error by the program code.|	Exceptions are handled using three keywords "try", "catch", and "throw".|
 |As the error is detected the program will terminated abnormally.|As an exception is detected, it is thrown and caught by the "throw" and "catch" keywords correspondingly.|
