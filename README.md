@@ -34,6 +34,8 @@ less popular web frameworks.
 
 * [Introduction](#-1-introduction)
 
+
+
 # Spring – Hello World Example
 
 * The first step is to create an application context where we used framework 
@@ -49,6 +51,34 @@ object to call any class method.
 ## # 1. INTRODUCTION
 
 <br/>
+
+
+## Usage
+
+All integrations require an instance of `Logbook` which holds all configuration and wires all necessary parts together. 
+You can either create one using all the defaults:
+
+```java
+Logbook logbook = Logbook.create();
+```
+or create a customized version using the `LogbookBuilder`:
+
+```java
+Logbook logbook = Logbook.builder()
+    .condition(new CustomCondition())
+    .queryFilter(new CustomQueryFilter())
+    .pathFilter(new CustomPathFilter())
+    .headerFilter(new CustomHeaderFilter())
+    .bodyFilter(new CustomBodyFilter())
+    .requestFilter(new CustomRequestFilter())
+    .responseFilter(new CustomResponseFilter())
+    .sink(new DefaultSink(
+            new CustomHttpLogFormatter(),
+            new CustomHttpLogWriter()
+    ))
+    .build();
+```
+
 
 ## Q. What are the important features of Java 8 release?
 
