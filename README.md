@@ -48,6 +48,18 @@ created context. This method uses bean ID to return a generic object, which fina
 can be casted to the actual object. Once you have an object, you can use this 
 object to call any class method.
 
+## Installation
+
+Add the following dependency to your project:
+
+```xml
+<dependency>
+    <groupId>org.zalando</groupId>
+    <artifactId>logbook-core</artifactId>
+    <version>${logbook.version}</version>
+</dependency>
+```
+
 ## # 1. INTRODUCTION
 
 <br/>
