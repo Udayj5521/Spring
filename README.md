@@ -45,6 +45,18 @@ created context. This method uses bean ID to return a generic object, which fina
 can be casted to the actual object. Once you have an object, you can use this 
 object to call any class method.
 
+## Installation
+
+Add the following dependency to your project:
+
+```xml
+<dependency>
+    <groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>5.3.18</version>
+</dependency>
+```
+
 ```java
 public class HelloWorld {
 
@@ -82,7 +94,8 @@ public class MainClass {
 
 }
 ```
-XML FILE
+## XML FILE
+
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -100,24 +113,6 @@ XML FILE
     
 
 </beans>
-```
-
-
-## # 1. INTRODUCTION
-
-<br/>
-
-
-## # 2. Installation
-
-Add the following dependency to your project:
-
-```xml
-<dependency>
-    <groupId>org.springframework</groupId>
-	<artifactId>spring-context</artifactId>
-	<version>5.3.18</version>
-</dependency>
 ```
 
 ## Spring IOC (Inversion of Control)
