@@ -32,7 +32,7 @@ less popular web frameworks.
 
 * [Introduction](#-1-introduction)
 * [Installation](#-2-installation)
-* [Spring BeanFactory Container](#-3-Spring BeanFactory Container)
+* [SpringBeanFactoryContainer](#-3-SpringBeanFactoryContainer)
 
 # Spring – Hello World Example
 
