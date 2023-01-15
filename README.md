@@ -132,64 +132,86 @@ DisposableBean, are still present in Spring for the purpose of backward
 compatibility with a large number of third-party frameworks that integrate with 
 Spring.
 
-Logbook comes with some built-in strategies:
-
-- [`BodyOnlyIfStatusAtLeastStrategy`](logbook-core/src/main/java/org/zalando/logbook/BodyOnlyIfStatusAtLeastStrategy.java)
-- [`StatusAtLeastStrategy`](logbook-core/src/main/java/org/zalando/logbook/StatusAtLeastStrategy.java)
-- [`WithoutBodyStrategy`](logbook-core/src/main/java/org/zalando/logbook/WithoutBodyStrategy.java)
-
-
-## Q. What are the important features of Java 8 release?
-
-* Interface methods by default;
-
-<div align="right">
-    <b><a href="(#-3-SpringBeanFactoryContainer)">↥ back to top</a></b>
-</div>
-
-
-## Q. In Java, How many ways you can take input from the console?
-
-In Java, there are three different ways for reading input from the user in the command line environment ( console ).
-
-**1. Using Buffered Reader Class:**
-
-This method is used by wrapping the System.in ( standard input stream ) in an InputStreamReader which is wrapped in a BufferedReader, we can read input from the user in the command line.
-
 ```java
-/**
- * Buffered Reader Class
- */
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
-public class Test {
-    public static void main(String[] args) throws IOException {
-        // Enter data using BufferReader
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        // Reading data using readLine
-        String name = reader.readLine();
-
-        // Printing the read line
-        System.out.println(name);
-    }
+public class Student {
+	private int id;
+	private String name;
+	private String email;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }
 ```
 
+```java
 
-<div align="right">
-    <b><a href="(#-2-installation)">↥ back to top</a></b>
-</div>
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class TestSaveStudent {
+	public static void main(String[] args) {
 
 
-# Get started
+//		XmlBeanFactory x = new XmlBeanFactory(new ClassPathResource("beans.xml"));
 
-You need
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory x = new XmlBeanFactory(r);
 
-* Java
-* Maven
+		Student s = (Student) x.getBean("myStudent");
+
+		System.out.println("Id: "+s.getId());
+		System.out.println("Name: "+s.getName());
+		System.out.println("Email: "+s.getEmail());
+	}
+}
+```
+## XML FILE
+
+```java
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="myStudent" class="com.Student">
+	<property name="id" value="1"></property>
+	<property name="name" value="Dinga"></property>
+	<property name="email" value="Dinga@gmail.com"></property>
+
+	</bean>
+</beans>
+```
+- [`SpringBeanFactoryContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringBeanFactoryContainer)
+
+## Output
+
+```java
+Id: 1
+Name: Dinga
+Email: Dinga@gmail.com
+```
 
 
 As an alternative:
