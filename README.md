@@ -46,6 +46,11 @@ created context. This method uses bean ID to return a generic object, which fina
 can be casted to the actual object. Once you have an object, you can use this 
 object to call any class method.
 
+## # 1. INTRODUCTION
+
+<br/>
+
+
 ## # 2. Installation
 
 Add the following dependency to your project:
@@ -58,15 +63,17 @@ Add the following dependency to your project:
 </dependency>
 ```
 
-## # 1. INTRODUCTION
+## # 3. Spring IOC (Inversion of Control)
 
-<br/>
+## 1. Spring BeanFactory Container
 
+This is the simplest container providing the basic support for DI and is defined by 
+the org.springframework.beans.factory.BeanFactoryinterface. The BeanFactory 
+and related interfaces, such as BeanFactoryAware, InitializingBean, 
+DisposableBean, are still present in Spring for the purpose of backward 
+compatibility with a large number of third-party frameworks that integrate with 
+Spring.
 
-## Usage
-
-All integrations require an instance of `Logbook` which holds all configuration and wires all necessary parts together. 
-You can either create one using all the defaults:
 
 ```java
 Logbook logbook = Logbook.create();
