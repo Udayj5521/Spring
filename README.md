@@ -32,7 +32,7 @@ less popular web frameworks.
 
 * [Introduction](#-1-introduction)
 * [Installation](#-2-installation)
-* [Spring IOC (Inversion of Control)](#-3-Spring IOC (Inversion of Control))
+* [Spring BeanFactory Container](#-3-Spring BeanFactory Container)
 
 # Spring – Hello World Example
 
