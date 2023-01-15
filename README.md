@@ -30,9 +30,8 @@ less popular web frameworks.
 
 ## Table of Contents
 
-* [Introduction](#-1-introduction)
-* [Installation](#-2-installation)
-* [SpringBeanFactoryContainer](#-3-SpringBeanFactoryContainer)
+* [Installation](#-1-installation)
+* [SpringHelloWorldExample](#-2-SpringHelloWorldExample)
 
 # Spring – Hello World Example
 
