@@ -31,7 +31,7 @@ less popular web frameworks.
 ## Table of Contents
 
 * [Introduction](#-1-introduction)
-* [Installation](#-1-installation)
+* [Installation](#-2-installation)
 
 
 # Spring – Hello World Example
@@ -46,7 +46,7 @@ created context. This method uses bean ID to return a generic object, which fina
 can be casted to the actual object. Once you have an object, you can use this 
 object to call any class method.
 
-## Installation
+## # 2. Installation
 
 Add the following dependency to your project:
 
