@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<bean id="myCar" class="com.constuctor.Car">
+		<constructor-arg name="brand" value="Audi"></constructor-arg>
+		<constructor-arg name="e" ref="myEnginee"></constructor-arg>
+	</bean>
+
+	<bean id="myEnginee" class="com.constuctor.Enginee">
+		<constructor-arg name="model" value="2023"></constructor-arg>
+		<constructor-arg name="cc" value="200"></constructor-arg>
+
+	</bean>
+
+
+</beans>
