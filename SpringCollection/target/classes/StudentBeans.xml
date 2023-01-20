@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<bean id="myStudent" class="com.Student">
+		<property name="name">
+			<list>
+				<value>Sandeep</value>
+				<value>Prajwal</value>
+				<value>Srinidi</value>
+				<value>Srinidi</value>
+				<value>Omkar</value>
+				<value>Omkar</value>
+				<value>Harish</value>
+			</list>
+		</property>
+
+		<property name="id">
+			<set>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>5</value>
+			</set>
+		</property>
+
+
+		<property name="address">
+			<map>
+				<entry key="1" value="Basavangudi"></entry>
+				<entry key="2" value="Banashankri"></entry>
+				<entry key="3" value="Srinagar"></entry>
+				<entry key="4" value="Girinagar"></entry>
+				<entry key="5" value="Jayanagar"></entry>
+			</map>
+		</property>
+		
+		
+		<property name="marks">
+		<props>
+		<prop key="one">100</prop>
+		<prop key="two">75</prop>
+		<prop key="three">50</prop>
+		<prop key="four">50</prop>
+		</props>
+		
+		</property>
+	</bean>
+
+
+</beans>
