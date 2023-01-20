@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="myFood" class="com.FoodMenu">
+		<property name="items">
+			<list>
+				<value>Idli</value>
+				<value>Vada</value>
+				<value>Dosa</value>
+				<value>RiceBath</value>
+				<value>RiceBath</value>
+				<value>Full Meals</value>
+				<value>Full Meals</value>
+			</list>
+		</property>
+		<property name="type">
+			<list>
+				<value>Veg</value>
+				<value>Non-Veg</value>
+			</list>
+		</property>
+		<property name="cost">
+			<list>
+				<value>40</value>
+				<value>50</value>
+				<value>60</value>
+				<value>60</value>
+				<value>70</value>
+				<value>70</value>
+				<value>100</value>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>
