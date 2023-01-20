@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<bean id="myAddress" class="com.Address">
+		<property name="addressProp">
+			<props>
+				<!-- <prop key="1">Banglaore</prop>
+				<prop key="2">Banglaore</prop>
+				<prop key="3">Hassan</prop>
+				<prop key="4">Mandya</prop>
+				<prop key="5">Goa</prop>
+				<prop key="6">Goa</prop>-->
+				<prop key="one">Banglaore</prop>
+				<prop key="two">Hassan</prop>
+				<prop key="three">Mandya</prop>
+				<prop key="four">Mandya</prop>
+			</props>
+		</property>
+	</bean>
+
+
+</beans>
