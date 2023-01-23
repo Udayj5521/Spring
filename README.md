@@ -801,3 +801,119 @@ KingFisher
 
 ```
 <br /> 
+
+# 6.scope
+
+This attribute specifies the scope of the objects created from a particular bean definition.
+
+## 6.1 Spring – Bean Scopes
+
+When defining a <bean> in Spring, you have the option of declaring a scope for that bean. 
+
+## 6.1.1 singleton
+
+ This scopes the bean definition to a single instance per Spring IoC container (default).
+
+## The Singleton Scope
+
+If a scope is set to singleton, the Spring IoC container creates exactly one instance of the 
+object defined by that bean definition. This single instance is stored in a cache of such 
+singleton beans, and all subsequent requests and references for that named bean return 
+the cached object.
+
+The default scope is always singleton.
+However, when you need one and only one instance of a bean, you can set the scope 
+property to singleton in the bean configuration file.
+
+```example
+<!-- A bean definition with singleton scope -->
+<bean id="..." class="..." scope="singleton">
+ <!-- collaborators and configuration for this bean go here -->
+</bean>
+```
+<br /> 
+
+## 6.2 The Prototype Scope
+
+If the scope is set to prototype, the Spring IoC container creates a new bean instance of 
+the object every time a request for that specific bean is made. As a rule, use the prototype 
+scope for all state-full beans and the singleton scope for stateless beans.
+To define a prototype scope, you can set the scope property to prototype in the bean 
+configuration file.
+
+```example
+<!-- A bean definition with prototype scope -->
+<bean id="..." class="..." scope="prototype">
+ <!-- collaborators and configuration for this bean go here -->
+</bean>
+```
+
+```java
+
+public class Tax {
+	private String accountHolder;
+	public String getAccountHolder() {
+		return accountHolder;
+	}
+	public void setAccountHolder(String accountHolder) {
+		this.accountHolder = accountHolder;
+	}	
+}
+```
+
+```java
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSaveTax {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("TaxBeans.xml");
+		
+		Tax t1 = (Tax) context.getBean("myTax");
+		t1.setAccountHolder("Ashok");
+		System.out.println("T1: " + t1.getAccountHolder());
+
+		Tax t2 = (Tax) context.getBean("myTax");
+		System.out.println("T2: " + t2.getAccountHolder());
+
+		Tax t3 = (Tax) context.getBean("myTax");
+		System.out.println("T3: " + t3.getAccountHolder());
+	}
+
+}
+```
+## XML FILE
+
+```java
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- A bean definition with singleton scope -->
+	<!-- <bean id="myTax" class="com.Tax" scope="singleton"></bean>  -->
+
+	<!-- A bean definition with prototype scope -->
+	<bean id="myTax" class="com.Tax" scope="prototype"></bean>
+
+</beans>
+```
+- [`SpringBeanFactoryContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringBeanScopes-Singleton-Prototype)
+
+## Output
+
+```java
+
+Singleton
+T1: Ashok
+T2: Ashok
+T3: Ashok 
+
+Prototype
+T1: Ashok
+T2: null
+T3: null
+```
+<br /> 
