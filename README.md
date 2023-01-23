@@ -347,6 +347,7 @@ Salary: 50000.0
 |2.Support Lazy Loading 	        |2. Support Aggressive loading|
 |3.It doesn't allow configure to multiple configuration files.|3.It allow to configure multiple configuration files.|
 |BeanFactory factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));|ApplicationContext contect = new  ClassPathXmlApplicationContext("beans.xml");|
+<br /> 
 
 ## FileSystemXmlApplicationContext
 
@@ -440,7 +441,7 @@ SeatNo: A1
 <br /> 
 
 
-## 2. ClassPathXmlApplicationContext
+## ClassPathXmlApplicationContext
 This container loads the definitions of the  beans from an XML file. Here you do not need
 to provide the full path of the XML file but you need to set CLASSPATH properly because 
 this container will look like bean configuration XML file in CLASSPATH.
