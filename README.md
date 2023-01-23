@@ -31,10 +31,27 @@ less popular web frameworks.
 ## Table of Contents
 
 * [Installation](#-1-installation)
-* [SpringHelloWorldExample](#-2-SpringHelloWorldExample)
-* [2.Spring IOC (Inversion of Control)](#-1-installation)
-* [2.1. Spring BeanFactory Container](#-1-installation)
-* [2.2. Spring ApplicationContext Container](#-1-installation) 
+* [1. SpringHelloWorldExample](#-2-SpringHelloWorldExample)
+* [2. Spring IOC (Inversion of Control)](#-1-installation)
+* [* Spring BeanFactory Container](#-1-installation)
+* [* Spring ApplicationContext Container](#-1-installation) 
+
+* [* FileSystemXmlApplicationContext](#-1-installation)
+* [* ClassPathXmlApplicationContext](#-1-installation)
+
+* [3. Spring – Bean Definition](#-1-installation)
+* [* class](#-1-installation)
+* [* name](#-1-installation)
+* [* lazy-initialization mode](#-1-installation)
+* [* initialization method](#-1-installation)
+* [* destruction method](#-1-installation)
+* [* scope](#-1-installation)
+
+
+* [4. Spring – Bean Scopes](#-1-installation)
+* [* singleton](#-1-installation)
+* [* The Prototype Scope](#-1-installation)
+
 
 # Spring – Hello World Example
 
