@@ -267,7 +267,6 @@ the org.springframework.context.ApplicationContext interface.
 
 ```java
 
-
 public class Employee {
 
 	private int id;
@@ -537,7 +536,7 @@ This attribute is mandatory and specifies the bean class to be used to create th
 
  A simple bean definition
  
- ```java
+ ```example
 <!-- A simple bean definition -->
  <bean id="..." class="...">
  <!-- collaborators and configuration for this bean go here -->
@@ -548,18 +547,21 @@ This attribute is mandatory and specifies the bean class to be used to create th
 This attribute specifies the bean identifier uniquely. In XMLbased configuration metadata, 
 you use the id and/or name attributes to specify the bean identifier(s).
 
+```example
 <!-- A simple bean definition -->
  <bean id="..." class="...">
  <!-- collaborators and configuration for this bean go here -->
+ <property name="...." value="......"></property>
  </bean>
 ```
 
 ```java
 
-public class Student {
+public class Employee {
+
 	private int id;
 	private String name;
-	private String email;
+	private double salary;
 	public int getId() {
 		return id;
 	}
@@ -572,36 +574,30 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
+	public double getSalary() {
+		return salary;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
 }
 ```
 
 ```java
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class TestSaveStudent {
+public class TestSaveEmployee {
 	public static void main(String[] args) {
 
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-//		XmlBeanFactory x = new XmlBeanFactory(new ClassPathResource("beans.xml"));
+		Employee e = (Employee) context.getBean("myEmployee");
 
-		Resource r = new ClassPathResource("beans.xml");
-		BeanFactory x = new XmlBeanFactory(r);
-
-		Student s = (Student) x.getBean("myStudent");
-
-		System.out.println("Id: "+s.getId());
-		System.out.println("Name: "+s.getName());
-		System.out.println("Email: "+s.getEmail());
+		System.out.println("Id: " + e.getId());
+		System.out.println("Name: " + e.getName());
+		System.out.println("Salary: " + e.getSalary());
 	}
 }
 ```
@@ -609,29 +605,26 @@ public class TestSaveStudent {
 
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean id="myStudent" class="com.Student">
-	<property name="id" value="1"></property>
-	<property name="name" value="Dinga"></property>
-	<property name="email" value="Dinga@gmail.com"></property>
-
+	<bean id="myEmployee" class="com.Employee">
+		<property name="id" value="1"></property>
+		<property name="name" value="Dinga"></property>
+		<property name="salary" value="50000.00"></property>
 	</bean>
+	
 </beans>
 ```
-- [`SpringBeanFactoryContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringBeanFactoryContainer)
+- [`SpringApplicationContextContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringApplicationContextContainer)
 
 ## Output
 
 ```java
 Id: 1
 Name: Dinga
-Email: Dinga@gmail.com
+Salary: 50000.0
 ```
 <br /> 
