@@ -532,12 +532,22 @@ For example, in the form of XML
 <bean/> definitions which you have already seen in the previous BeanFactory and 
 ApplicationContext.
 
-## 1. Class
+## 1. class
 This attribute is mandatory and specifies the bean class to be used to create the bean.
 
  A simple bean definition
  
  ```java
+<!-- A simple bean definition -->
+ <bean id="..." class="...">
+ <!-- collaborators and configuration for this bean go here -->
+ </bean>
+```
+
+## 2.name
+This attribute specifies the bean identifier uniquely. In XMLbased configuration metadata, 
+you use the id and/or name attributes to specify the bean identifier(s).
+
 <!-- A simple bean definition -->
  <bean id="..." class="...">
  <!-- collaborators and configuration for this bean go here -->
