@@ -69,10 +69,10 @@ less popular web frameworks.
 * [7. Spring – Bean Definition Inheritance](#-1-installation)
 
 * [8. Spring – Injecting Collection](#-1-installation)
-* [<list>](#-1-installation)
-* [<set>](#-1-installation)
-* [<map>](#-1-installation)
-* [<props>](#-1-installation)
+* [list](#-1-installation)
+* [set](#-1-installation)
+* [map](#-1-installation)
+* [properties>](#-1-installation)
 	
 	
 # Spring – Hello World Example
