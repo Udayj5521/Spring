@@ -353,47 +353,58 @@ Salary: 50000.0
 This container loads the definitions of the  beans from an XML file. 
 Here you need to provide the full path of the XML bean configuration file to the constructor.
 
-```
-public class Employee {
-
-	private int id;
-	private String name;
-	private double salary;
-	public int getId() {
-		return id;
+```java
+public class Train {
+	
+	private int trainId;
+	private double cost;
+	private String seatNo;
+	
+	public int getTrainId() {
+		return trainId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setTrainId(int trainId) {
+		this.trainId = trainId;
 	}
-	public String getName() {
-		return name;
+	public double getCost() {
+		return cost;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCost(double cost) {
+		this.cost = cost;
 	}
-	public double getSalary() {
-		return salary;
+	public String getSeatNo() {
+		return seatNo;
 	}
-	public void setSalary(double salary) {
-		this.salary = salary;
+	public void setSeatNo(String seatNo) {
+		this.seatNo = seatNo;
 	}
 }
 ```
 
-```
+```java
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-public class TestSaveEmployee {
+public class TestSaveTrain {
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+//		Train t = new Train();
+//		t.setTrainId(101);
+//		t.setSeatNo("A1");
+//		t.setCost(70.00);
+//
+//		System.out.println(t.getTrainId());
+//		System.out.println(t.getSeatNo());
+//		System.out.println(t.getCost());
 
-		Employee e = (Employee) context.getBean("myEmployee");
+		ApplicationContext context = new FileSystemXmlApplicationContext("C:/Users/udayj/Music/Beans.xml");
 
-		System.out.println("Id: " + e.getId());
-		System.out.println("Name: " + e.getName());
-		System.out.println("Salary: " + e.getSalary());
+		Train t = (Train) context.getBean("myTrain");
+
+		System.out.println("TrainId: " + t.getTrainId());
+		System.out.println("Cost: " + t.getCost());
+		System.out.println("SeatNo: " + t.getSeatNo());
 	}
 }
 ```
@@ -401,27 +412,30 @@ public class TestSaveEmployee {
 
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean id="myEmployee" class="com.Employee">
-		<property name="id" value="1"></property>
-		<property name="name" value="Dinga"></property>
-		<property name="salary" value="50000.00"></property>
+	<bean id="myTrain" class="com.Train">
+		<property name="trainId" value="101"></property>
+		<property name="cost" value="70.00"></property>
+		<property name="seatNo" value="A1"></property>
 	</bean>
-	
+
 </beans>
 ```
-- [`SpringApplicationContextContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringApplicationContextContainer)
+- [`SpringApplicationContextContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringFileSystem)
 
 ## Output
 
 ```java
-Id: 1
-Name: Dinga
-Salary: 50000.0
+TrainId: 101
+Cost: 70.00
+SeatNo: A1
 ```
 <br /> 
 
