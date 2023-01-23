@@ -628,3 +628,98 @@ Name: Dinga
 Salary: 50000.0
 ```
 <br /> 
+
+## 3.name
+A lazy-initialized bean tells the IoC container to create a bean instance when it is first requested, rather than at the startup.
+
+```example
+<!-- A bean definition with lazy init set on -->
+ <bean id="..." class="..." lazy-init="true">
+ <!-- collaborators and configuration for this bean go here -->
+ </bean>
+```
+
+```java
+
+public class Car {
+
+	private String brand;
+	private String color;
+	private double cost;
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public double getCost() {
+		return cost;
+	}
+
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+}
+```
+
+```java
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSaveCar {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("CarBeans.xml");
+		Car c = (Car) context.getBean("myCar");
+		System.out.println("Brand: " + c.getBrand());
+		System.out.println("Color: " + c.getColor());
+		System.out.println("Cost: " + c.getCost());
+	}
+}
+```
+## XML FILE
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- A simple bean definition -->
+	<!-- 	<bean id="myCar" class="com.lazy.Car">
+		<property name="brand" value="Audi"></property>
+		<property name="color" value="White"></property>
+		<property name="cost" value="1000000.00"></property>
+	</bean>
+-->
+	<!-- A bean definition with lazy init set on -->
+	<bean id="myCar" class="com.lazy.Car" lazy-init="true">
+		<property name="brand" value="Audi"></property>
+		<property name="color" value="White"></property>
+		<property name="cost" value="1000000.00"></property>
+	</bean>
+	
+</beans>
+```
+- [`SpringApplicationContextContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringBeanDefinition-Lazy-Init-Destruction)
+
+## Output
+
+```java
+Brand: Audi
+Color: White
+Cost: 1000000.00
+```
+<br /> 
