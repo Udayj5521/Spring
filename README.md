@@ -533,13 +533,12 @@ For example, in the form of XML
 ApplicationContext.
 
 ## 1. Class
--------------
 This attribute is mandatory and specifies the bean class to be used to create the bean.
 
-<!-- A simple bean definition -->
- <bean id="..." class="...">
- <!-- collaborators and configuration for this bean go here -->
- </bean>
+ A simple bean definition
+### <bean id="..." class="...">
+### <!-- collaborators and configuration for this bean go here -->
+### </bean>
 
 ```java
 
