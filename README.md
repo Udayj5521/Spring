@@ -629,7 +629,7 @@ Salary: 50000.0
 ```
 <br /> 
 
-## 3.name
+## 3.lazy-initialization mode
 A lazy-initialized bean tells the IoC container to create a bean instance when it is first requested, rather than at the startup.
 
 ```example
@@ -721,5 +721,83 @@ public class TestSaveCar {
 Brand: Audi
 Color: White
 Cost: 1000000.00
+```
+<br /> 
+
+## 3.initialization method
+A callback to be called just after all necessary properties on the bean have been set by the container.
+
+```example
+<!-- A bean definition with initialization method -->
+ <bean id="..." class="..." init-method="...">
+ <!-- collaborators and configuration for this bean go here -->
+ </bean>
+```
+
+## 4.destruction method
+A callback to be used when the container containing the bean is destroyed. 
+
+```example
+<!-- A bean definition with destruction method -->
+ <bean id="..." class="..." destroy-method="...">
+ <!-- collaborators and configuration for this bean go here -->
+ </bean>
+```
+
+```java
+
+public class Flight {
+
+	void flightName() {
+		System.out.println("KingFisher");
+	}
+
+	void flightColor() {
+		System.out.println("WHITE");
+	}
+}
+```
+
+```java
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSaveFlight {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("FlightBeans.xml");
+		Flight f = (Flight) context.getBean("myFlight");
+	}
+}
+```
+## XML FILE
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- A bean definition with initialization method -->
+
+	<!-- <bean id="myFlight" class="com.init.destruction.Flight" 
+	init-method="flightName"></bean> -->
+
+<!-- A bean definition with destruction method -->
+
+	<bean id="myFlight" class="com.init.destruction.Flight" 
+	destroy-method="flightColor"></bean>
+
+</beans>
+
+```
+- [`SpringApplicationContextContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringBeanDefinition-Lazy-Init-Destruction)
+
+## Output
+
+```java
+KingFisher
+
 ```
 <br /> 
