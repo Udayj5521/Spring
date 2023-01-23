@@ -354,8 +354,6 @@ This container loads the definitions of the  beans from an XML file.
 Here you need to provide the full path of the XML bean configuration file to the constructor.
 
 ```
-
-
 public class Employee {
 
 	private int id;
@@ -383,7 +381,6 @@ public class Employee {
 ```
 
 ```
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
