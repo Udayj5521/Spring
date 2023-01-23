@@ -520,3 +520,105 @@ Name: Dinga
 Salary: 50000.0
 ```
 <br /> 
+
+# 3. Spring – Bean Definition
+The objects that form the backbone of your application and that are managed by the 
+Spring IoC container are called beans. 
+A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC 
+container. These beans are created with the configuration metadata that you supply to the
+container. 
+
+For example, in the form of XML 
+<bean/> definitions which you have already seen in the previous BeanFactory and 
+ApplicationContext.
+
+## 1. Class
+-------------
+This attribute is mandatory and specifies the bean class to be used to create the bean.
+
+<!-- A simple bean definition -->
+ <bean id="..." class="...">
+ <!-- collaborators and configuration for this bean go here -->
+ </bean>
+
+```java
+
+public class Student {
+	private int id;
+	private String name;
+	private String email;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+}
+```
+
+```java
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class TestSaveStudent {
+	public static void main(String[] args) {
+
+
+//		XmlBeanFactory x = new XmlBeanFactory(new ClassPathResource("beans.xml"));
+
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory x = new XmlBeanFactory(r);
+
+		Student s = (Student) x.getBean("myStudent");
+
+		System.out.println("Id: "+s.getId());
+		System.out.println("Name: "+s.getName());
+		System.out.println("Email: "+s.getEmail());
+	}
+}
+```
+## XML FILE
+
+```java
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="myStudent" class="com.Student">
+	<property name="id" value="1"></property>
+	<property name="name" value="Dinga"></property>
+	<property name="email" value="Dinga@gmail.com"></property>
+
+	</bean>
+</beans>
+```
+- [`SpringBeanFactoryContainer`](https://github.com/Udayj5521/Spring/tree/main/SpringBeanFactoryContainer)
+
+## Output
+
+```java
+Id: 1
+Name: Dinga
+Email: Dinga@gmail.com
+```
+<br /> 
