@@ -3,10 +3,9 @@ package com.qualifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-//Qualifier Annotation
 public class Profile {
 	@Autowired
-	@Qualifier("myStudent2")
+	@Qualifier("student3")
 	private Student student;
 	
 	public Profile() {
@@ -20,6 +19,5 @@ public class Profile {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
-
 	
 }
